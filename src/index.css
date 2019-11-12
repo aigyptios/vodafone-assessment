@@ -1,13 +1,84 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('/MYRIADPRO-REGULAR.OTF');
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Myriad Pro', Arial, sans-serif;
+  color: #071e57;
+}
+
+.header {
+  background-color: #404859;
+  position: relative;
+}
+
+.header__nav {
+  position: absolute;
+  top: calc(15px + 2vmin);
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  max-width: 542px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__nav-links {
+  list-style: none;
+}
+
+.header__nav-link-item {
+  display: inline-block;
+  margin: 0 20px;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-search {
+  border: 0;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+
+.page-heading {
+  text-align: center;
+  padding: 6vmin 0;
+}
+
+.container {
+  max-width: 870px;
+  padding: 10px;
+  margin: 2vmin auto;
+}
+
+.home-nav {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.home-nav__links {
+  list-style: none;
+}
+
+.home-nav__links-item {
+  display: inline-block;
+  margin-left: 40px;
+  font-size: 14px;
 }
