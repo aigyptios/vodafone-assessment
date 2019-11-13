@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: 'Myriad Pro';
-  src: url('/MYRIADPRO-REGULAR.OTF');
+  src: url('assets/myriad-pro-regular.otf');
 }
 
 a {
@@ -15,9 +15,61 @@ a {
   text-decoration: none;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 30px;
+  margin: 15px auto;
+}
+
+.fl-row {
+  width: calc(100% + 30px);
+  display: flex;
+  flex-flow: column;
+  margin-left: -15px;
+  padding: 0;
+}
+
+@media ( min-width: 769px ) {
+  .fl-row {
+    flex-flow: row;
+  }
+}
+
+.fl-row > * {
+  flex-grow: 1;
+  flex-basis: 1px;
+  margin: 15px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 20px 70px 0px rgba(100, 100, 100, 0.10);
+  min-height: 300px;
+  padding: 15px;
+  text-align: center;
+}
+
+
+
+
+
+
 body {
   font-family: 'Myriad Pro', Arial, sans-serif;
   color: #071e57;
+  background-color: #f8faff;
+}
+
+
+h2 {
+  font-size: 15px;
+  color: #1292ee;
 }
 
 .header {
@@ -46,9 +98,36 @@ body {
   margin: 0 20px;
   color: white;
   font-size: 14px;
+  position: relative;
+}
+.header__nav-link-item {
+  position: relative;
+}
+
+
+.nav-link--active::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25px;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #2ed47d;
 }
 
 .btn-search {
+  border: 0;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.btn-close {
   border: 0;
   background: transparent;
   color: white;
@@ -62,15 +141,9 @@ body {
   padding: 6vmin 0;
 }
 
-.container {
-  max-width: 870px;
-  padding: 10px;
-  margin: 2vmin auto;
-}
-
 .home-nav {
   text-align: right;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .home-nav__links {
@@ -81,4 +154,50 @@ body {
   display: inline-block;
   margin-left: 40px;
   font-size: 14px;
+  position: relative;
+}
+
+
+.info-form__heading {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 15px 0;
+}
+
+.info-form {
+  text-align: center;
+  padding: 0 30px;
+}
+
+.info-form__subtext {
+  font-size: 14px;
+  color: #748494;
+  margin: 15px;
+  display: inline-block;
+}
+
+.info-form__form-element-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.info-form__form-element-container > input {
+  display: inline-block;
+  width: 100%;
+  padding: 13px;
+  margin: 15px 0;
+  border: 0;
+  background: #f5f5f5;
+  font-size: 15px;
+}
+
+.info-form__submit {
+  border: 0;
+  padding: 17px;
+  background: #166dd5;
+  color: white;
+  font-size: 15px;
+  width: 160px;
+  display: inline-block;
+  margin-top: 15px;
 }

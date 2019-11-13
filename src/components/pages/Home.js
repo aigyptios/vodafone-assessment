@@ -1,8 +1,9 @@
 import React from 'react';
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 import ContentService from '../../services/ContentService';
 
 import GallerySection from '../sections/GallerySection';
+import InformationSection from '../sections/InformationSection';
 
 export default class Home extends React.Component {
 
@@ -28,18 +29,18 @@ export default class Home extends React.Component {
           <nav className="home-nav">
             <ul className="home-nav__links">
               <li className="home-nav__links-item">
-                <Link to={`/`}>Section 1</Link>
+                <NavLink activeClassName="nav-link--active" exact to={`/home`}>Section 1</NavLink>
               </li>
               <li className="home-nav__links-item">
-                <Link to={`/section-2`}>Section 2</Link>
+                <NavLink activeClassName="nav-link--active" to={`/home/section-2`}>Section 2</NavLink>
               </li>
             </ul>
           </nav>
           <Switch>
-            <Route path={`/section-2`}>
-              {/* <Section2 /> */} Graph and form go here
+            <Route path={`/home/section-2`}>
+              <InformationSection data={this.state.data.sections[1]}/>
             </Route>
-            <Route path={'/'}>
+            <Route path={'/home'}>
               <GallerySection data={this.state.data.sections[0]}></GallerySection>
             </Route>
           </Switch>

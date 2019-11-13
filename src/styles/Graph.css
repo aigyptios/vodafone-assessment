@@ -1,0 +1,74 @@
+.graph__stat {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.graph__title {
+  margin-top: 15px;
+  margin-bottom: 45px;
+  font-size: 32px;
+}
+
+span.graph__stat-title {
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+span.graph__stat-amount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+}
+
+.graph__stat-progress {
+  height: 5px;
+  width: 100%;
+  background: #f5f7fd;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+.graph__stat-progress-filler {
+  height: 5px;
+  border-radius: 30px;
+  position: relative;
+}
+
+.graph__stat:nth-child(n + 1) .graph__stat-progress-filler { background: linear-gradient(to left, #57fded, #0089bd) }
+.graph__stat:nth-child(2n + 1) .graph__stat-progress-filler { background: linear-gradient(to left, #73bff7, #2c76ab) }
+.graph__stat:nth-child(3n + 1) .graph__stat-progress-filler { background: linear-gradient(to left, #f9bbaf, #eb8256) }
+.graph__stat:nth-child(4n + 1) .graph__stat-progress-filler { background: linear-gradient(to left, #f9a9d9, #7b53d9) }
+
+.graph__stat:nth-child(n + 1) .graph__stat-progress-filler::after { border: 1px solid #57fded }
+.graph__stat:nth-child(2n + 1) .graph__stat-progress-filler::after { border: 1px solid #73bff7 }
+.graph__stat:nth-child(3n + 1) .graph__stat-progress-filler::after { border: 1px solid #f9bbaf }
+.graph__stat:nth-child(4n + 1) .graph__stat-progress-filler::after { border: 1px solid #f9a9d9 }
+
+.graph__stat:nth-child(n + 1) .graph__stat-progress-filler::before { border: 3px solid #57fded }
+.graph__stat:nth-child(2n + 1) .graph__stat-progress-filler::before { border: 3px solid #73bff7 }
+.graph__stat:nth-child(3n + 1) .graph__stat-progress-filler::before { border: 3px solid #f9bbaf }
+.graph__stat:nth-child(4n + 1) .graph__stat-progress-filler::before { border: 3px solid #f9a9d9 }
+
+.graph__stat-progress-filler::after {
+  display: block;
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  position: absolute;
+  top: -7px;
+  left: calc( 100% - 1px );
+}
+
+.graph__stat-progress-filler::before {
+  display: block;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  position: absolute;
+  top: -3px;
+  left: calc( 100% + 3px );
+}
