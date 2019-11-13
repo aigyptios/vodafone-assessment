@@ -9,6 +9,8 @@ Things I would like to do to make this better (if I had the time):
 - **Accessibility.** More semantic HTML.
 - **Pixel Perfection.** Currently it is not pixel perfect (in terms of spacing and colors, though I did try my best). I took more liberties because one requirement was to be responsive but no responsive mock-ups/PSD files were provided.
 
+Please note that I did not use any external libraries. Unless they are absolutely necessary, I usually do not want to import large frameworks or libraries into my code just to use one or two out of the 100+ features they may include (and make file sizes larger). If this application were larger and real, I would have included libraries for things like search and the slider (for example).
+
 ## Other information
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
