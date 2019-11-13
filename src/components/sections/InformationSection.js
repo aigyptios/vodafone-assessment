@@ -52,19 +52,34 @@ export default class InformationSection extends React.Component {
                 { this.props.data.subText || 'We work with ecosystem leaders, corporations and startups worldwide. How can we help you?'}
               </span>
               <div className='info-form__form-element-container'>
+                <input 
+                  className={ this.state.phoneError ? 'error' : '' } 
+                  placeholder='Your Phone' 
+                  value={ this.state.phone } 
+                  onChange={ this.updateFormElement.bind(this, 'phone')}>
+                </input>
+                <input 
+                  className={ this.state.emailError ? 'error' : '' } 
+                  placeholder='Your Email' 
+                  value={ this.state.email } 
+                  onChange={ this.updateFormElement.bind(this, 'email')}>
+                </input>
+                <input 
+                  type='password'
+                  className={ this.state.passwordError ? 'error' : '' } 
+                  placeholder='Password' 
+                  value={ this.state.password } 
+                  onChange={ this.updateFormElement.bind(this, 'password')}>
+                </input>
 
-                {/* Replacing what the data provides because it doesn't make sense */}
-
-                <input className={ this.state.phoneError ? 'error' : '' } placeholder='Your Phone' value={ this.state.phone } onChange={ this.updateFormElement.bind(this, 'phone')}></input>
-                <input className={ this.state.emailError ? 'error' : '' } placeholder='Your Email' value={ this.state.email } onChange={ this.updateFormElement.bind(this, 'email')}></input>
-                <input className={ this.state.passwordError ? 'error' : '' } placeholder='Password' type='password' value={ this.state.password } onChange={ this.updateFormElement.bind(this, 'password')}></input>
-
+                {/* ^^^^ I replaced what the data provides because it doesn't make sense */}
                 {/* {
                   this.props.data.formLabels.map( (label, i) => (
                     <input key={i} placeholder={ label }></input>
                   ))
                 } */}
-                <button  className='info-form__submit' onClick={ this.validateForm.bind( this ) }>{ this.props.data.buttonText }</button>
+                
+                <button className='info-form__submit' onClick={ this.validateForm.bind( this ) }>{ this.props.data.buttonText }</button>
               </div>
             </div>
           </div>
