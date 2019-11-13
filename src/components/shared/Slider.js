@@ -16,7 +16,7 @@ export default class Slider extends React.Component {
   }
 
   componentDidMount() {
-    ContentService.getPageContent('https://voda-react-assessment.herokuapp.com/slider')
+    ContentService.getPageContent( this.props.resourceURI )
       .then( data =>
         this.setState({
           data: data
@@ -33,6 +33,7 @@ export default class Slider extends React.Component {
   }
 
   goToSlide( index ) {
+    // reset timer when user clicks a new slide
     window.clearInterval( this.intervalId );
     this.setState( { activeImageIndex: index } );
     this.autoPlay();

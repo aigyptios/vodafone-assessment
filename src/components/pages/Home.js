@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route, NavLink } from 'react-router-dom';
 import ContentService from '../../services/ContentService';
 
 import GallerySection from '../sections/GallerySection';
@@ -13,7 +13,7 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    ContentService.getPageContent('https://voda-react-assessment.herokuapp.com/home')
+    ContentService.getPageContent( this.props.resourceURI )
       .then( data =>
         this.setState({
           data: data[0]
@@ -24,15 +24,15 @@ export default class Home extends React.Component {
   render() {
     if ( this.state.data ) {
       return (
-        <div className="container">
-          <h1 className="page-heading">{ this.state.data.description }</h1>
-          <nav className="home-nav">
-            <ul className="home-nav__links">
-              <li className="home-nav__links-item">
-                <NavLink activeClassName="nav-link--active" exact to={`/home`}>Section 1</NavLink>
+        <div className='container'>
+          <h1 className='page-heading'>{ this.state.data.description }</h1>
+          <nav className='home-nav'>
+            <ul className='home-nav__links'>
+              <li className='home-nav__links-item'>
+                <NavLink activeClassName='nav-link--active' exact to={`/home`}>Section 1</NavLink>
               </li>
-              <li className="home-nav__links-item">
-                <NavLink activeClassName="nav-link--active" to={`/home/section-2`}>Section 2</NavLink>
+              <li className='home-nav__links-item'>
+                <NavLink activeClassName='nav-link--active' to={`/home/section-2`}>Section 2</NavLink>
               </li>
             </ul>
           </nav>

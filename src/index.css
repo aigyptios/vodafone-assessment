@@ -46,18 +46,6 @@ a {
   margin: 15px;
 }
 
-.card {
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0px 20px 70px 0px rgba(100, 100, 100, 0.10);
-  min-height: 300px;
-  padding: 15px;
-  text-align: center;
-}
-
-
-
-
 
 
 body {
@@ -122,19 +110,9 @@ h2 {
 .btn-search {
   border: 0;
   background: transparent;
-  color: white;
   cursor: pointer;
   margin: 0 20px;
 }
-
-.btn-close {
-  border: 0;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  margin: 0 20px;
-}
-
 
 .page-heading {
   text-align: center;
@@ -186,9 +164,13 @@ h2 {
   width: 100%;
   padding: 13px;
   margin: 15px 0;
-  border: 0;
+  border: 2px solid transparent;
   background: #f5f5f5;
   font-size: 15px;
+}
+
+.info-form__form-element-container > input.error {
+  border-color: indianred;
 }
 
 .info-form__submit {
@@ -200,4 +182,63 @@ h2 {
   width: 160px;
   display: inline-block;
   margin-top: 15px;
+}
+
+
+.tile {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 20px 70px 0px rgba(0, 0, 0, 0.05);
+  padding: 50px;
+  text-align: center;
+  height: 100%;
+}
+
+.tile:hover {
+  background-color: #1d2b37;
+}
+
+.tile:hover * {
+  color: #ddd;
+}
+
+.tile__icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  background-size: 100% 100%;
+}
+
+.tile__icon.icon1 { background-image: url('assets/icon1.svg'); }
+.tile__icon.icon2 { background-image: url('assets/icon2.svg'); }
+.tile__icon.icon3 { background-image: url('assets/icon3.png'); }
+
+.tile:hover .tile__icon.icon1 { background-image: url('assets/icon1-white.svg'); }
+.tile:hover .tile__icon.icon2 { background-image: url('assets/icon2-white.svg'); }
+.tile:hover .tile__icon.icon3 { background-image: url('assets/icon3-white.png'); }
+
+.tile__title {
+  display: block;
+  margin-bottom: 20px;
+  color: #071e57;
+}
+
+.tile__description {
+  color: #748494;
+  display: block;
+  margin: 15px 15px 30px;
+  line-height: 1.5em;
+}
+
+.tile__link {
+  color: #0077cc;
+}
+
+.tile:hover .tile__link {
+  text-decoration: underline;
+}
+
+.tile__link::after {
+  content: '\000A0\000A0\0203A'
 }

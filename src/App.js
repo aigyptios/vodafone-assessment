@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Home from './components/pages/Home';
-import Page2 from './components/pages/Page2';
+import Page from './components/pages/Page';
 import Slider from './components/shared/Slider';
 import Search from './components/shared/Search';
 
 import { ReactComponent as MagnifyingGlass } from './assets/svg-magnifier.svg';
 
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, NavLink, Redirect } from 'react-router-dom';
 
 export default class App extends React.Component {
 
@@ -40,16 +40,19 @@ export default class App extends React.Component {
                 <MagnifyingGlass />
               </button>
             </nav>
-            <Slider></Slider>
+            <Slider resourceURI='https://voda-react-assessment.herokuapp.com/slider'></Slider>
             <Search isShowing={ this.state.searching } onClose={ this.setSearch.bind(this, false) }></Search>
           </header>
 
           <Switch>
             <Route path='/page-2'>
-              <Page2 />
+              <Page resourceURI='https://voda-react-assessment.herokuapp.com/page' />
             </Route>
             <Route path='/home'>
-              <Home />
+              <Home resourceURI='https://voda-react-assessment.herokuapp.com/home' />
+            </Route>
+            <Route path='/'>
+              <Redirect to='/home' />
             </Route>
           </Switch>
         </Router>
